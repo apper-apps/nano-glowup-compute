@@ -1,0 +1,110 @@
+[
+  {
+    "Id": 1,
+    "name": "Morning Glow Routine",
+    "duration": 5,
+    "difficulty": "Easy",
+    "steps": [
+      "Gently massage your temples in circular motions",
+      "Use fingertips to tap around your eye area",
+      "Smooth your forehead with upward strokes",
+      "Massage your cheeks with gentle circular motions",
+      "Finish with neck stretches and deep breathing"
+    ],
+    "benefits": ["Improved circulation", "Reduced puffiness", "Natural glow"],
+    "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=300&fit=crop"
+  },
+  {
+    "Id": 2,
+    "name": "Anti-Aging Face Lift",
+    "duration": 8,
+    "difficulty": "Medium",
+    "steps": [
+      "Place palms on forehead and gently lift upward",
+      "Use knuckles to massage along jawline",
+      "Apply pressure to cheekbones and lift",
+      "Gently pull skin around eyes outward",
+      "Massage from chin to ears with firm pressure",
+      "Finish with lymphatic drainage techniques"
+    ],
+    "benefits": ["Reduced fine lines", "Firmer skin", "Improved elasticity"],
+    "imageUrl": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=300&fit=crop"
+  },
+  {
+    "Id": 3,
+    "name": "Stress Relief Facial",
+    "duration": 10,
+    "difficulty": "Easy",
+    "steps": [
+      "Take three deep breaths and relax your face",
+      "Gently massage your scalp with fingertips",
+      "Use palms to cover eyes and breathe deeply",
+      "Massage temples with slow circular motions",
+      "Apply gentle pressure to jaw muscles",
+      "End with facial cupping movements"
+    ],
+    "benefits": ["Stress reduction", "Muscle relaxation", "Better sleep"],
+    "imageUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=300&fit=crop"
+  },
+  {
+    "Id": 4,
+    "name": "Jawline Sculpting",
+    "duration": 6,
+    "difficulty": "Medium",
+    "steps": [
+      "Clench and release jaw muscles 10 times",
+      "Move jaw side to side slowly",
+      "Make exaggerated chewing motions",
+      "Use thumbs to massage along jawline",
+      "Apply resistance with hands while opening mouth"
+    ],
+    "benefits": ["Defined jawline", "Reduced jaw tension", "Facial contouring"],
+    "imageUrl": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop"
+  },
+  {
+    "Id": 5,
+    "name": "Eye Brightening Routine",
+    "duration": 4,
+    "difficulty": "Easy",
+    "steps": [
+      "Gently tap around eyes with ring fingers",
+      "Make circles around eye sockets",
+      "Press and hold pressure points at temples",
+      "Blink rapidly 20 times",
+      "Gently stretch eyelids upward"
+    ],
+    "benefits": ["Brighter eyes", "Reduced dark circles", "Less puffiness"],
+    "imageUrl": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&h=300&fit=crop"
+  },
+  {
+    "Id": 6,
+    "name": "Lymphatic Drainage",
+    "duration": 12,
+    "difficulty": "Hard",
+    "steps": [
+      "Start with gentle neck massage downward",
+      "Use lymphatic drainage strokes on face",
+      "Apply pressure to lymph nodes",
+      "Make sweeping motions from center outward",
+      "Focus on under-eye area with gentle taps",
+      "End with full face drainage sequence"
+    ],
+    "benefits": ["Detoxification", "Reduced swelling", "Improved skin tone"],
+    "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop"
+  },
+  {
+    "Id": 7,
+    "name": "Cheek Lift & Tone",
+    "duration": 7,
+    "difficulty": "Medium",
+    "steps": [
+      "Smile wide and hold for 10 seconds",
+      "Puff out cheeks and hold air",
+      "Use palms to lift cheeks upward",
+      "Make fish face and hold position",
+      "Massage cheeks in upward circular motions"
+    ],
+    "benefits": ["Lifted cheeks", "Better facial volume", "Youthful appearance"],
+    "imageUrl": "https://images.unsplash.com/photo-1594824804732-5f5f74bcf5e3?w=400&h=300&fit=crop"
+  }
+]

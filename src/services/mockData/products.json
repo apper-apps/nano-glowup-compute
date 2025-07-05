@@ -1,0 +1,134 @@
+[
+  {
+    "Id": 1,
+    "name": "Vitamin C Brightening Serum",
+    "brand": "GlowLab",
+    "price": 45.99,
+    "rating": 4.8,
+    "category": "Serum",
+    "skinType": ["All", "Dull", "Uneven"],
+    "imageUrl": "https://images.unsplash.com/photo-1556228720-da4e85f25e15?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product1"
+  },
+  {
+    "Id": 2,
+    "name": "Hydrating Hyaluronic Acid Moisturizer",
+    "brand": "AquaGlow",
+    "price": 32.50,
+    "rating": 4.6,
+    "category": "Moisturizer",
+    "skinType": ["Dry", "Combination", "Sensitive"],
+    "imageUrl": "https://images.unsplash.com/photo-1570194065650-d99bf4d82d37?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product2"
+  },
+  {
+    "Id": 3,
+    "name": "Gentle Foaming Cleanser",
+    "brand": "PureClean",
+    "price": 24.99,
+    "rating": 4.7,
+    "category": "Cleanser",
+    "skinType": ["All", "Sensitive", "Oily"],
+    "imageUrl": "https://images.unsplash.com/photo-1556228578-dd4ca87e3b7c?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product3"
+  },
+  {
+    "Id": 4,
+    "name": "Retinol Night Cream",
+    "brand": "NightGlow",
+    "price": 68.00,
+    "rating": 4.9,
+    "category": "Night Cream",
+    "skinType": ["Mature", "Combination", "Normal"],
+    "imageUrl": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product4"
+  },
+  {
+    "Id": 5,
+    "name": "Niacinamide Pore Minimizer",
+    "brand": "PoreLess",
+    "price": 28.75,
+    "rating": 4.5,
+    "category": "Treatment",
+    "skinType": ["Oily", "Combination", "Acne-prone"],
+    "imageUrl": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product5"
+  },
+  {
+    "Id": 6,
+    "name": "Sunscreen SPF 50+ Daily Defense",
+    "brand": "SunShield",
+    "price": 35.99,
+    "rating": 4.8,
+    "category": "Sunscreen",
+    "skinType": ["All", "Sensitive", "Oily"],
+    "imageUrl": "https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product6"
+  },
+  {
+    "Id": 7,
+    "name": "Exfoliating AHA/BHA Toner",
+    "brand": "ExfoGlow",
+    "price": 39.50,
+    "rating": 4.4,
+    "category": "Toner",
+    "skinType": ["Oily", "Combination", "Acne-prone"],
+    "imageUrl": "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product7"
+  },
+  {
+    "Id": 8,
+    "name": "Peptide Anti-Aging Eye Cream",
+    "brand": "YouthRevive",
+    "price": 52.00,
+    "rating": 4.6,
+    "category": "Eye Cream",
+    "skinType": ["Mature", "All", "Sensitive"],
+    "imageUrl": "https://images.unsplash.com/photo-1597931752949-98c74b5b159f?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product8"
+  },
+  {
+    "Id": 9,
+    "name": "Ceramide Barrier Repair Cream",
+    "brand": "BarrierFix",
+    "price": 41.25,
+    "rating": 4.7,
+    "category": "Moisturizer",
+    "skinType": ["Dry", "Sensitive", "Damaged"],
+    "imageUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product9"
+  },
+  {
+    "Id": 10,
+    "name": "Brightening Vitamin E Face Oil",
+    "brand": "GlowOils",
+    "price": 46.99,
+    "rating": 4.5,
+    "category": "Face Oil",
+    "skinType": ["Dry", "Mature", "Dull"],
+    "imageUrl": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product10"
+  },
+  {
+    "Id": 11,
+    "name": "Salicylic Acid Acne Treatment",
+    "brand": "ClearSkin",
+    "price": 29.99,
+    "rating": 4.3,
+    "category": "Treatment",
+    "skinType": ["Oily", "Acne-prone", "Combination"],
+    "imageUrl": "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product11"
+  },
+  {
+    "Id": 12,
+    "name": "Collagen Boosting Face Mask",
+    "brand": "MaskMagic",
+    "price": 18.50,
+    "rating": 4.4,
+    "category": "Mask",
+    "skinType": ["All", "Mature", "Dry"],
+    "imageUrl": "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=400&fit=crop",
+    "shopUrl": "https://example.com/product12"
+  }
+]
