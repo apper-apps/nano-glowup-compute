@@ -8,7 +8,7 @@ import Track from '@/components/pages/Track'
 import Profile from '@/components/pages/Profile'
 import ExerciseDetail from '@/components/pages/ExerciseDetail'
 import ProductDetail from '@/components/pages/ProductDetail'
-
+import Favorites from '@/components/pages/Favorites'
 function App() {
   return (
     <div className="min-h-screen bg-background">
@@ -17,8 +17,9 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="exercises" element={<Exercises />} />
           <Route path="exercises/:id" element={<ExerciseDetail />} />
-          <Route path="products" element={<Products />} />
+<Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="favorites" element={<Favorites />} />
           <Route path="track" element={<Track />} />
           <Route path="profile" element={<Profile />} />
         </Route>

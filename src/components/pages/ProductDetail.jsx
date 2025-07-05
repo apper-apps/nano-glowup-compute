@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { toast } from 'react-toastify'
 import Header from '@/components/molecules/Header'
 import Card from '@/components/atoms/Card'
 import Button from '@/components/atoms/Button'
@@ -8,19 +9,55 @@ import Loading from '@/components/ui/Loading'
 import Error from '@/components/ui/Error'
 import ApperIcon from '@/components/ApperIcon'
 import { ProductService } from '@/services/api/ProductService'
-
+import { FavoritesService } from '@/services/api/FavoritesService'
 const ProductDetail = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [product, setProduct] = useState(null)
+const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [relatedProducts, setRelatedProducts] = useState([])
-
-  useEffect(() => {
+  const [isFavorite, setIsFavorite] = useState(false)
+  const [favoriteLoading, setFavoriteLoading] = useState(false)
+useEffect(() => {
     loadProduct()
   }, [id])
 
+  useEffect(() => {
+    if (product) {
+      checkFavoriteStatus()
+    }
+  }, [product])
+
+  const checkFavoriteStatus = async () => {
+    try {
+      const favorite = await FavoritesService.isFavorite(product.Id)
+      setIsFavorite(favorite)
+    } catch (error) {
+      console.error('Error checking favorite status:', error)
+    }
+  }
+
+  const handleFavoriteToggle = async () => {
+    try {
+      setFavoriteLoading(true)
+      
+      if (isFavorite) {
+        await FavoritesService.remove(product.Id)
+        setIsFavorite(false)
+        toast.success('Removed from favorites')
+      } else {
+        await FavoritesService.add(product.Id)
+        setIsFavorite(true)
+        toast.success('Added to favorites')
+      }
+    } catch (error) {
+      console.error('Error toggling favorite:', error)
+      toast.error('Failed to update favorites')
+    } finally {
+      setFavoriteLoading(false)
+    }
+  }
   const loadProduct = async () => {
     try {
       setLoading(true)
@@ -151,16 +188,34 @@ const ProductDetail = () => {
                 </div>
               </div>
               
-              <div className="pt-4">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="w-full"
-                  icon="ExternalLink"
-                  onClick={() => window.open(product.shopUrl, '_blank')}
-                >
-                  Shop Now - ${product.price}
-                </Button>
+<div className="pt-4 space-y-3">
+                <div className="flex gap-3">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    className="flex-1"
+                    icon="ExternalLink"
+                    onClick={() => window.open(product.shopUrl, '_blank')}
+                  >
+                    Shop Now - ${product.price}
+                  </Button>
+                  <Button
+                    variant={isFavorite ? "secondary" : "outline"}
+                    size="lg"
+                    className="px-4"
+                    onClick={handleFavoriteToggle}
+                    disabled={favoriteLoading}
+                  >
+                    <ApperIcon 
+                      name="Heart" 
+                      className={`w-5 h-5 ${
+                        isFavorite 
+                          ? 'text-red-500 fill-current' 
+                          : 'text-gray-500'
+                      }`}
+                    />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

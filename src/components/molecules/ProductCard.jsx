@@ -1,13 +1,56 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import ApperIcon from '@/components/ApperIcon'
 import Card from '@/components/atoms/Card'
 import Button from '@/components/atoms/Button'
-
-const ProductCard = ({ product }) => {
+import { FavoritesService } from '@/services/api/FavoritesService'
+const ProductCard = ({ product, onFavoriteUpdate }) => {
   const navigate = useNavigate()
-  
+  const [isFavorite, setIsFavorite] = useState(false)
+  const [favoriteLoading, setFavoriteLoading] = useState(false)
+
+  useEffect(() => {
+    checkFavoriteStatus()
+  }, [product.Id])
+
+  const checkFavoriteStatus = async () => {
+    try {
+      const favorite = await FavoritesService.isFavorite(product.Id)
+      setIsFavorite(favorite)
+    } catch (error) {
+      console.error('Error checking favorite status:', error)
+    }
+  }
+
+  const handleFavoriteToggle = async (e) => {
+    e.stopPropagation()
+    
+    try {
+      setFavoriteLoading(true)
+      
+      if (isFavorite) {
+        await FavoritesService.remove(product.Id)
+        setIsFavorite(false)
+        toast.success('Removed from favorites')
+      } else {
+        await FavoritesService.add(product.Id)
+        setIsFavorite(true)
+        toast.success('Added to favorites')
+      }
+      
+      // Notify parent component if callback provided
+      if (onFavoriteUpdate) {
+        onFavoriteUpdate()
+      }
+    } catch (error) {
+      console.error('Error toggling favorite:', error)
+      toast.error('Failed to update favorites')
+    } finally {
+      setFavoriteLoading(false)
+    }
+  }
   const renderStars = (rating) => {
     return Array.from({ length: 5 }).map((_, index) => (
       <ApperIcon
@@ -28,7 +71,24 @@ const ProductCard = ({ product }) => {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -5 }}
     >
-      <Card className="cursor-pointer h-full flex flex-col">
+<Card className="cursor-pointer h-full flex flex-col">
+        <div className="relative">
+          <button
+            onClick={handleFavoriteToggle}
+            disabled={favoriteLoading}
+            className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-200 disabled:opacity-50"
+          >
+            <ApperIcon 
+              name="Heart" 
+              className={`w-5 h-5 transition-colors duration-200 ${
+                isFavorite 
+                  ? 'text-red-500 fill-current' 
+                  : 'text-gray-400 hover:text-red-500'
+              }`}
+            />
+          </button>
+        </div>
+        
         <div 
           className="space-y-4 flex-1"
           onClick={() => navigate(`/products/${product.Id}`)}
