@@ -103,12 +103,24 @@ const ExerciseDetail = () => {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }
 
-  const getDifficultyColor = (difficulty) => {
+const getDifficultyColor = (difficulty) => {
     switch (difficulty?.toLowerCase()) {
-      case 'easy': return 'text-success'
-      case 'medium': return 'text-warning'
-      case 'hard': return 'text-error'
+      case 'easy':
+      case 'beginner': return 'text-success'
+      case 'medium': 
+      case 'intermediate': return 'text-warning'
+      case 'hard':
+      case 'advanced': return 'text-error'
       default: return 'text-gray-600'
+    }
+  }
+
+  const getDifficultyDisplayName = (difficulty) => {
+    switch (difficulty?.toLowerCase()) {
+      case 'easy': return 'Beginner'
+      case 'medium': return 'Intermediate'
+      case 'hard': return 'Advanced'
+      default: return difficulty
     }
   }
 
@@ -157,8 +169,8 @@ const ExerciseDetail = () => {
                 <ApperIcon name="Clock" className="w-5 h-5 mr-2" />
                 {exercise.duration} minutes
               </div>
-              <div className={`font-medium ${getDifficultyColor(exercise.difficulty)}`}>
-                {exercise.difficulty}
+<div className={`font-medium ${getDifficultyColor(exercise.difficulty)}`}>
+                {getDifficultyDisplayName(exercise.difficulty)}
               </div>
             </div>
             

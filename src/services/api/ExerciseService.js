@@ -1,11 +1,10 @@
-import exerciseData from '@/services/mockData/exercises.json'
+import exerciseData from "@/services/mockData/exercises.json";
 
 export const ExerciseService = {
   getAll: async () => {
     await new Promise(resolve => setTimeout(resolve, 300))
     return [...exerciseData]
   },
-
   getById: async (id) => {
     await new Promise(resolve => setTimeout(resolve, 200))
     const exercise = exerciseData.find(item => item.Id === id)
@@ -33,7 +32,7 @@ export const ExerciseService = {
     return { ...exerciseData[index] }
   },
 
-  delete: async (id) => {
+delete: async (id) => {
     await new Promise(resolve => setTimeout(resolve, 250))
     const index = exerciseData.findIndex(item => item.Id === id)
     if (index === -1) {
@@ -41,5 +40,36 @@ export const ExerciseService = {
     }
     const deleted = exerciseData.splice(index, 1)[0]
     return { ...deleted }
+  },
+
+  getDifficultySettings: async () => {
+    await new Promise(resolve => setTimeout(resolve, 200))
+    const settings = JSON.parse(localStorage.getItem('userPreferences') || '{}')
+    return {
+      preferredDifficulty: settings.difficulty || 'intermediate',
+      availableDifficulties: ['beginner', 'intermediate', 'advanced']
+    }
+  },
+
+  updateDifficultySettings: async (difficulty) => {
+    await new Promise(resolve => setTimeout(resolve, 200))
+    const settings = JSON.parse(localStorage.getItem('userPreferences') || '{}')
+    settings.difficulty = difficulty
+    localStorage.setItem('userPreferences', JSON.stringify(settings))
+    return { difficulty }
+  },
+
+  getByDifficulty: async (difficulty) => {
+    await new Promise(resolve => setTimeout(resolve, 250))
+    const difficultyMap = {
+      'beginner': 'easy',
+      'intermediate': 'medium', 
+      'advanced': 'hard'
+    }
+    const mappedDifficulty = difficultyMap[difficulty.toLowerCase()] || difficulty.toLowerCase()
+    const filtered = exerciseData.filter(exercise => 
+      exercise.difficulty?.toLowerCase() === mappedDifficulty
+    )
+    return [...filtered]
   }
 }
